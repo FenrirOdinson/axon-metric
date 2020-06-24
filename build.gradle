@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'java'
+}
+
+group = 'de.immosolve'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'io.micrometer:micrometer-registry-statsd'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    compile group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '4.1.1'
+    compile group: 'org.axonframework', name: 'axon-micrometer', version: '4.1.1'
+
+}
